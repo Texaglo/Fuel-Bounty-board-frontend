@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Red+Rose:wght@300;400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .container {
+    @apply mx-auto px-5 max-w-[calc(1300px+40px)];
+  }
+  .__btn {
+    @apply px-5 text-center py-4 text-sm font-medium text-white duration-100 bg-[#5B52AD] border-[1.5px] border-[#5B52AD] rounded-lg outline-none lg:text-base lg:px-10 hover:bg-transparent disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .__btn.outline {
+    @apply hover:bg-[#5B52AD] border-[#5B52AD] bg-transparent;
+  }
+  .__btn.outline.white {
+    @apply text-white bg-transparent border-white hover:!bg-transparent;
+  }
+  .__title_lg {
+    @apply text-[58px] leading-[55px] text-white font-red-rose;
+  }
+  .__gray_box {
+    @apply py-[9px] px-[5px] text-[#55585D] text-sm font-medium bg-[#93969b] rounded-[5px] border border-[#A8ACB4] text-center;
+  }
+  .__btn.sm {
+    @apply py-2.5;
+  }
+}
+
+@layer utilities {
+  .__body_bg {
+    @apply bg-[url('/img/body-bg.svg')] bg-no-repeat;
+  }
+}
+
+body {
+  @apply text-white __body_bg;
+  background-size: 100%;
+}
+
+.deposite_input {
+  @apply bg-transparent border-none outline-none w-[40px];
+}
+.form-control {
+  @apply block w-full py-[0.375rem] px-[0.75rem] text-[1rem] leading-[1.5] text-white bg-transparent border border-white/20 appearance-none rounded-[0.375rem] outline-none;
+}
+
+/* Switch Styles ----Start---- */
+.__switch {
+  @apply sr-only;
+}
+.__switch_wrapper {
+  @apply relative h-5 duration-150 rounded-full cursor-pointer bg-white/40 w-9;
+}
+
+.__switch_ball {
+  @apply h-4 aspect-square rounded-full bg-[#272d37] duration-300 absolute top-1/2 -translate-y-1/2 left-[2px];
+}
+
+.__switch:checked + .__switch_wrapper {
+  @apply bg-[#5B52AD];
+}
+
+.__switch:checked + .__switch_wrapper .__switch_ball {
+  @apply bg-white translate-x-[calc(100%-1px)];
+}
+/* Switch Styles ----End---- */
+
+.__inputs_wrapper,
+.__inputs_wrapper_get_trained,
+.__get_trained_text_arear_wrapper {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5;
+}
+.__get_trained_text_arear_wrapper {
+  margin-top: 20px;
+}
+
+.__modal_cotent_wrapper {
+  background-color: #272d37;
+  padding: 25px;
+  width: 90vw;
+  max-height: 80vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  @apply sm:w-[550px] lg:w-[750px] rounded-2xl;
+}
