@@ -1,5 +1,7 @@
-const Home = () => {
-  return <div>Home Page</div>;
+import Login from "@/views/Login";
+
+const LoginPage = () => {
+  return <Login />;
 };
 
-export default Home;
+export default LoginPage;
